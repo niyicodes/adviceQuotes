@@ -1,16 +1,34 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
+import React, { useEffect, useState } from 'react'; 
+import { createClient } from 'pexels';
 import "./App.css";
-import FetchButton from "./components/FetchButton/FetchButton";
 import Card from "./components/Card/Card";
 
 function App() {
- const [count, setCount] = useState(0);
+ const [quotes, setQuotes] = useState("");
+ const client = createClient('563492ad6f91700001000001c51b42520a1a4b79987d274ce83654a0');
 
+ const fetchQuote = () => {
+  fetch("https://api.adviceslip.com/advice")
+  .then((response) => response.json())
+  .then((data) => {
+   setQuotes(data.slip.advice);
+  })
+  .catch((error) => {
+   console.log("error in fetching advices");
+  });
+ }
+ useEffect(() => {
+  fetchQuote()
+ }, []);
  return (
   <div className="App">
-   <FetchButton />
-   <Card />
+   <button
+    onClick={fetchQuote}
+    style={{ outline: "none" }}
+   >
+    Get random quote
+   </button>
+   <Card randomAdvice={quotes}/>
   </div>
  );
 }

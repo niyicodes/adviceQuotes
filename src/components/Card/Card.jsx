@@ -2,13 +2,12 @@ import React from "react";
 // import { Link } from 'react-router-dom'
 import styled from "styled-components";
 
-const Card = () => {
+const Card = ({randomAdvice}) => {
  return (
   <QuoteCard>
    <h3>Tip of the Day is Here!</h3>
    <h4>Note it Down 🗒</h4>
-   <p>You can't choose up sides on a round world</p>
-   {/* <small>By: <Link to='/'>Wayne Dyer</Link></small> */}
+   <p>{randomAdvice}</p>
   </QuoteCard>
  );
 };

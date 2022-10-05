@@ -1,8 +1,8 @@
 import React from 'react'
 
-const FetchButton = () => {
+const FetchButton = ({onClick}) => {
  return (
-  <button>Get random quote</button>
+  <button onClick={onClick} style={{outline: 'none',}}>Get random quote</button>
  )
 }
 
