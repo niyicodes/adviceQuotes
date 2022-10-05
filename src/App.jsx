@@ -26,7 +26,7 @@ function App() {
     onClick={fetchQuote}
     style={{ outline: "none" }}
    >
-    Get random quote
+    Get random advice
    </button>
    <Card randomAdvice={quotes}/>
   </div>
