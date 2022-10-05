@@ -25,20 +25,17 @@ const QuoteCard = styled.div`
  h4 {
   margin-top: -10px;
   color: white;
-  font-size: 10px;
+  font-size: 15px;
  }
 
  p {
   color: whitesmoke;
-  font-size: 15px;
+  font-size: 20px;
   max-width: 100%;
   width: 85%;
   margin:auto;
  }
 
- small {
-  font-size: 10px;
- }
 `;
 
 export default Card;
